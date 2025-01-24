@@ -1,19 +1,18 @@
-//maneira mais rapida e funcional:
+// maneira mais rapida e funcional:
 // const h1 = document.querySelector('.container h1');
 // const data = new Date();
 // const opcoes = {
-//     dateStyle: 'full',
-//     timeStyle: 'Short'
+//   dateStyle: 'full',
+//   timeStyle: 'short'
 // };
 
 // h1.innerHTML = data.toLocaleDateString('pt-BR', opcoes);
 
 
+const h1 = document.querySelector('.container h1'); // captura elemento do html
+const data = new Date(); // cria um objeto 'Date' de data e hora atuais
 
-const h1 = document.querySelector('.container h1');
-const data = new Date();
-
-
+// Verifica o dia da semana que o programa está sendo executado:
 function getDiaSemanaTexto(diaSemana) {
     let diaSemanaTexto;
 
@@ -41,10 +40,11 @@ function getDiaSemanaTexto(diaSemana) {
       return diaSemanaTexto;
     default:
        diaSemanaTexto = '';
-       return diaSemanaTexto; 
+       return diaSemanaTexto;
   }
 }
 
+// Verifica o més que o código esta sendo executado:
 function getNomeMes(numeroMes) {
     let nomeMes;
 
@@ -88,10 +88,12 @@ function getNomeMes(numeroMes) {
   }
 }
 
+// Função que adiciona um zero a esquerda quando necessario:
 function zeroEsquerda (num) {
     return num >= 10 ? num : `0${num}`;
 }
 
+// Funcão que cria a data para apresentar ao usuario:
 function criaData(data) {
     const diaSemana = data.getDay();
     const numeroMes = data.getMonth();
@@ -106,4 +108,5 @@ function criaData(data) {
     );
 }
 
+// Apresenta na tela para o usuario
 h1.innerHTML = criaData(data);
