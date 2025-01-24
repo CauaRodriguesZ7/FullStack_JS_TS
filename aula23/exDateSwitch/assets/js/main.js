@@ -108,5 +108,5 @@ function criaData(data) {
     );
 }
 
-// Apresenta na tela para o usuario
+
 h1.innerHTML = criaData(data);
